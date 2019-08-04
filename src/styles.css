@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.full-width {
+  width: 100%;
+}
+
+.m-b-5 {
+  margin-bottom: 5rem;
+}
+
+.m-t-8 {
+  margin-top: 8rem;
+}
+
+.m-l-1 {
+  margin-left: 1rem;
+}
+
+.m-l-2 {
+  margin-left: 2rem;
+}
+
+.m-l-5 {
+  margin-left: 5rem;
+}
+
+.m-r-1 {
+  margin-left: 1rem;
+}
+
+.title {
+  font-size: 14px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+.sub-title {
+  color: grey;
+  font-size: 10px;
+}
