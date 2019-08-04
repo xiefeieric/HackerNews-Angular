@@ -1,0 +1,15 @@
+<nav class="navbar navbar-default m-b-5">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" (click)="collapsed = !collapsed">
+        <span class="icon-bar" *ngFor="let iconBar of [1, 2, 3]"></span>
+      </button>
+      <a routerLink="/" class="navbar-brand">Hacker News</a>
+    </div>
+    <div class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true">
+      <ul class="nav navbar-nav">
+        <li *ngFor="let item of menu"><a [routerLink]="" (click)="switchNewsType(item.type)">{{item.name}}</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>

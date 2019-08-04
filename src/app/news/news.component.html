@@ -1,0 +1,29 @@
+<app-header></app-header>
+
+<mat-progress-spinner
+  *ngIf="isLoading"
+  class="center-block"
+  color="primary"
+  mode="indeterminate">
+</mat-progress-spinner>
+
+<app-news-view
+  *ngIf="!isLoading"
+  [news]="news"
+  [pageIndex]="pageIndex"
+  [pageSize]="pageSize"
+  (openNews)="openNews($event)"
+  (favUpdate)="toggleFav($event)">
+</app-news-view>
+
+<div [hidden]="isLoading || !news.length">
+  <mat-paginator
+      #matPaginator
+      [length]="newsIds.length"
+      [pageSize]="pageSize"
+      [pageSizeOptions]="[30, 50, 100]">
+  </mat-paginator>
+</div>
+
+<p *ngIf="!news.length && !isLoading" class="text-center text-danger">No data available</p>
+
