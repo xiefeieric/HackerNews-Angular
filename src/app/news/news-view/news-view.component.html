@@ -1,0 +1,26 @@
+<mat-list role="list">
+  <mat-list-item
+    class="m-b-5"
+    [ngClass]="{'m-t-8': i !== 0}"
+    role="listitem" *ngFor="let newsItem of news, index as i">
+    <mat-card class="full-width">
+      <div fxLayout="column" fxLayoutAlign="stretch">
+        <div fxLayout="row" fxLayoutAlign="start center">
+          <div>{{pageSize * pageIndex + i + 1}}.</div>
+          <a routerLink="" class="m-l-1 title" (click)="openDoc(newsItem)">{{newsItem?.title}}</a>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="start center">
+          <div class="sub-title">{{newsItem?.score}} points</div>
+          <div class="m-l-1 m-r-1 sub-title">|</div>
+          <div class="sub-title m-l-1">by {{newsItem?.by}}</div>
+          <div class="m-l-1 m-r-1 sub-title">|</div>
+          <div class="sub-title m-l-1">{{getDisplayTime(newsItem)}}</div>
+          <div class="m-l-1 m-r-1 sub-title">|</div>
+          <button mat-icon-button [color]="newsItem?.isFav ? 'warn' : undefined" aria-label="favourite" (click)="toggleFav(newsItem)">
+            <mat-icon>favorite</mat-icon>
+          </button>
+        </div>
+      </div>
+    </mat-card>
+  </mat-list-item>
+</mat-list>
